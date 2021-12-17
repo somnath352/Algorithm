@@ -8,7 +8,7 @@ const int M = 1e9+7;
 
 void merge(int arr[], int low, int mid, int high) {
     int i = low, j = mid+1;
-    int k = 0;
+    int k = low;    // k = 0;
     int arr2[high-low+1];
     while(i<=mid && j<=high) {
         if(arr[i] < arr[j]) {
@@ -34,8 +34,11 @@ void merge(int arr[], int low, int mid, int high) {
         }
     }
     
-    for(i = low; i <=high;i++) {
-		arr[i] = arr2[i - low];
+// 	for(int i = low;i<=high;i++) {
+// 		arr[i] = arr2[i-low];
+	
+    for(k = low; k <=high;k++) {
+		arr[k] = arr2[k];
 	}
 }
 
